@@ -3,8 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Users } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { UserRegisterRequestDto } from './dto/users-register.req.dto';
-import * as bcrypt from 'bcrypt'
-import { users } from './users.mock';
 
 @Injectable()
 export class UsersService {
@@ -23,10 +21,7 @@ export class UsersService {
         return await this.usersRepository.save(user);
     }
 
-    async findOne(username: string): Promise<any> {
-        console.log('check2');
-        const check = users.find(user => user.username === username);
-        console.log(check);
-        return check
+    async getUserByUserName(username: string): Promise<any> {        
+        return await this.usersRepository.findOne({where:{UserName: username}})
       }
 }
