@@ -21,7 +21,7 @@ export default class TypeOrmConfig {
                     trustServerCertificate: true,
                 },
             },
-            logging: true,
+            logging: false,
         }
     }
 }
