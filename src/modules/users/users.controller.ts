@@ -1,4 +1,4 @@
-import { SETTINGS } from './../app.utils';
+import { SETTINGS } from '../app/app.utils';
 import { Controller, Get, Post, Body, Patch, Param, Delete, ValidationPipe, HttpStatus, Query, DefaultValuePipe, ParseIntPipe } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UserRegisterRequestDto } from './dto/users-register.req.dto';

@@ -1,4 +1,4 @@
-import { Customers } from "src/customers/entities/customer.entity";
+import { Customers } from "src/modules/customers/entities/customer.entity";
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({ name: 'Orders'})
