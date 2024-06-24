@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, Validation
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { CustomersService } from 'src/customers/customers.service';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Order')
 @Controller('orders')
 export class OrdersController {
   constructor(private ordersService: OrdersService) { }
