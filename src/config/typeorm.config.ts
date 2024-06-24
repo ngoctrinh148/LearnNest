@@ -10,10 +10,8 @@ export const typeOrmConfigAsync : TypeOrmModuleAsyncOptions = {
             password: process.env.DB_PASSWORD,
             database: process.env.DB_DATABASE,
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-            
-            synchronize: true,
+            synchronize: false,
             migrations: [__dirname + '/../migrations/*{.ts,.js}'],
-
             extra: {
                 options: {
                     encrypt: true,
