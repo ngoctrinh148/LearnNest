@@ -6,7 +6,7 @@ import { OrdersModule } from '../orders/orders.module';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from '../users/users.module';
 import { AuthModule } from '../auth/auth.module';
-import { dataSourceOptions } from 'database/data-source';
+import { dataSourceOptions } from 'src/database/data-source';
 
 
 @Module({
