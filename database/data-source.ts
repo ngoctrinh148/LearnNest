@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 import { DataSource, DataSourceOptions } from "typeorm";
-config()
+config();
 
 export const dataSourceOptions: DataSourceOptions = {
     type: "mssql",
@@ -9,8 +9,9 @@ export const dataSourceOptions: DataSourceOptions = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-    migrations: [__dirname + '/../migrations/*{.ts,.js}'],
+    entities: ['dist/**/*.entity{.ts,.js}'],
+    synchronize: false,
+    migrations: ['dist/database/migrations/*{.ts,.js}'],
     extra: {
         options: {
             encrypt: true,
@@ -18,7 +19,7 @@ export const dataSourceOptions: DataSourceOptions = {
         },
     },
     logging: false,
-};
+}
 
 const dataSource = new DataSource(dataSourceOptions);
 export default dataSource;
